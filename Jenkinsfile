@@ -21,14 +21,14 @@ node {
           }
     }
           stage("Quality Gate"){
-          timeout(time: 1, unit: 'HOURS') {
+          /*timeout(time: 1, unit: 'HOURS') {
               def qg = waitForQualityGate()
               if (qg.status != 'OK') {
                   emailext body: "${qg.status}", subject: 'job failed', to: 'Durgamadhab.Dash@Mindtree.com'
                   error "Pipeline aborted due to quality gate failure: ${qg.status}"
                  
               }
-          }
+          }*/
       }       
 
        stage('Build') {
