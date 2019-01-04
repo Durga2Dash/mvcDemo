@@ -13,7 +13,11 @@ node {
     
     stage('SonarQube analysis') {
           withSonarQubeEnv('sonarqube1') {
-                sh 'mvn sonar:sonar'
+                sh '''mvn sonar:sonar \
+  -Dsonar.projectKey=Durga2Dash_mvcDemo \
+  -Dsonar.organization=durga2dash-github \
+  -Dsonar.host.url=https://sonarcloud.io \
+  -Dsonar.login=ee5bb4186a645554f897d8ccf2c80f584c588c0e'''
           }
     }
           stage("Quality Gate"){
